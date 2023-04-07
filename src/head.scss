@@ -1,6 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+
+
+@mixin font1{
+    font-family: 'Noto Nastaliq Urdu', serif;
+}
 .head{
-    background-color: cyan;
+    
+    width: 100%;
+    height: 60px;
 }
 .hello{
-    color: red;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+    .left-secctions{
+        float: left;
+        width: 35%;
+        div{
+            float: left;
+            font-size: 18px;
+            @include font1();
+            padding-left: 10px;
+            padding-right: 25px;
+            cursor: pointer;
+
+        }
+    }
+    .right-secctions{
+        float: left;
+        width: 65%;
+        div{
+            float: right;
+            font-size: 18px;
+            @include font1();
+            padding-right: 10px;
+            padding-left: 25px;
+            cursor: pointer;
+        }
+    }
 }
+
+body {
+    background-image: url('img/john-wick.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh; /* Set height to full viewport height */
+    width: 100vw; /* Set width to full viewport width */
+    background-repeat: no-repeat;
+    /* max-height: 56.25vw; /* Set max height to maintain 16:9 aspect ratio (16 / 9 * 100) 
+    max-width: 177.78vh; /* Set max width to maintain 16:9 aspect ratio (9 / 16 * 100) */ 
+    backdrop-filter: blur(7px); /* Apply a 10px blur to the background */
+  }
+  
+  
