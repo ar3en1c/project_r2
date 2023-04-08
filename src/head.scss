@@ -6,7 +6,7 @@
 }
 .head{
     
-    width: 100%;
+    width: 100vw;
     height: 60px;
 }
 .hello{
@@ -52,5 +52,51 @@ body {
     max-width: 177.78vh; /* Set max width to maintain 16:9 aspect ratio (9 / 16 * 100) */ 
     backdrop-filter: blur(7px); /* Apply a 10px blur to the background */
   }
+
+.catFather{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    flex-wrap: nowrap;
+    .catUncle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        height: 90vh;
+        direction: rtl;
+        flex-wrap: wrap;
+    }
+    .catChild{
+        font-size: 25px;
+        @include font1();
+        color: white;
+        width: 50%;
+        float: right;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.goback{
+    position: absolute; /* Add this line */
+    top: 10px; /* Add this line */
+    right: 10px; /* Add this line */
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    @include font1();
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
   
   
