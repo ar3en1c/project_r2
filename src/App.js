@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import './head.scss';
+import './middle.scss';
+import Category from './category';
 
-function App() {
+
+const App = () => {
+  const [showCategory, setShowCategory] = useState(false);
+
+  const handleClickCategory = () => {
+    setShowCategory(true);
+  };
+
+  const handleGoBack = () => {
+    setShowCategory(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+      {!showCategory && (
+        <>
+          <Header handleClickCategory={handleClickCategory} />
+          <Middle />
+        </>
+      )}
+      {showCategory && (
+        <Category goBack={handleGoBack} />
+      )}
+    </>
+  );
+};
+
+const Header = ({ handleClickCategory }) => {
+  return (
+    <header className="head">
+      <div className="hello">
+        <div className="left-secctions">
+          <div>جستجو</div>
+          <div>پروفایل</div>
+        </div>
+        <div className="right-secctions">
+          <div style={{ fontSize: '25px', fontFamily: 'arial', paddingTop: '15px' }}>لوگو</div>
+          <div>خانه</div>
+          <div>فیلم ها</div>
+          <div>سریال ها</div>
+          <div id="category" onClick={handleClickCategory}>دسته بندی</div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+const Middle = () => {
+  return (
+    <div className="middle">
+      my middle sections
     </div>
   );
-}
+};
 
 export default App;
