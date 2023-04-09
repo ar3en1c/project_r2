@@ -1,7 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
+
+@mixin font1{
+    font-family: 'Noto Nastaliq Urdu', serif;
+}
+@mixin font2{
+    font-family: 'Readex Pro', sans-serif;
+}
 $dark : #343541;
+
 .footer{
     height: 400px;
     background-color: $dark;
-    width: 100vw;
+    width: 100%;
     display: block;
+    margin-top: 80px;
+}
+.f1fs{
+    width: 100%;
+    background-color: #222327;
+    height: auto;
+    float: right;
+    &-child{
+        @include font1();
+        float: right;
+        padding: 15px 1.25%;
+        width: 10%;
+        text-align: center;
+        font-size: 18px;
+        color: white;
+    }
+}
+.f2fs{
+    width: 90%;
+    margin: 25px 5%;
+    background-color: #222327;
+    float: right;
+    border-radius: 5px;
+    &-logo{
+        float: right;
+        padding: 10px 3%;
+        img{
+            max-width: 80px;
+            max-height: 80px;
+            float: right;
+        }
+        div{
+            @include font1();
+            font-size: 20px;
+            color: white;
+            margin: 10px 30px;
+            float: right;
+        }
+    }
 }
