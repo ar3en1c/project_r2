@@ -1,27 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
 
-@mixin font1{
+@font-face {
+    font-family: "Yekan";
+    src: url("./Yekan.ttf")
+}
+
+@mixin font1 {
     font-family: 'Noto Nastaliq Urdu', serif;
 }
-@mixin font2{
+
+@mixin font2 {
     font-family: 'Readex Pro', sans-serif;
 }
-$dark : #343541;
 
-.footer{
-    height: 400px;
+@mixin font3 {
+    font-family: 'Yekan', sans-serif;
+}
+
+$dark : #343541;
+$border : #4f5159;
+
+.footer {
+    /* height: auto; */
     background-color: $dark;
     width: 100%;
     display: block;
     margin-top: 80px;
+    float: right;
 }
-.f1fs{
+
+.f1fs {
     width: 100%;
     background-color: #222327;
     height: auto;
     float: right;
-    &-child{
+
+    &-child {
         @include font1();
         float: right;
         padding: 15px 1.25%;
@@ -31,21 +46,25 @@ $dark : #343541;
         color: white;
     }
 }
-.f2fs{
+
+.f2fs {
     width: 90%;
     margin: 25px 5%;
     background-color: #222327;
     float: right;
     border-radius: 5px;
-    &-logo{
+
+    &-logo {
         float: right;
         padding: 10px 3%;
-        img{
+
+        img {
             max-width: 80px;
             max-height: 80px;
             float: right;
         }
-        div{
+
+        div {
             @include font1();
             font-size: 20px;
             color: white;
@@ -53,4 +72,71 @@ $dark : #343541;
             float: right;
         }
     }
+}
+
+.f3fs {
+    float: right;
+    width: 70%;
+    margin-right: 5%;
+    direction: rtl;
+
+    &-titr {
+        color: white;
+        @include font3();
+        margin-right: 1%;
+    }
+
+    &-about {
+        color: white;
+        @include font3();
+        margin-right: 1%;
+    }
+}
+
+.f4fs {
+    width: 20%;
+    margin-left: 5%;
+    float: right;
+
+    &-hd {
+        padding-left: 13%;
+
+        img {
+            max-width: 170px;
+            max-height: 170px;
+            border-radius: 10px;
+        }
+    }
+}
+
+.f5fs {
+    width: 90%;
+    margin: 20px 5%;
+    float: right;
+    border-top: 1px solid $border;
+    padding-top: 10px;
+
+    &-copyright {
+        float: right;
+        direction: rtl;
+        @include font3();
+        color: white;
+        font-size: 13px;
+    }
+
+    &-logo {
+        svg {
+            margin-left: 4%;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                color: cyan;
+            }
+
+            width: 35px;
+            height: 35px;
+        }
+    }
+
 }

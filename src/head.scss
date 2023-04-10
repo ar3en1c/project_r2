@@ -40,6 +40,27 @@
         }
     }
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #14fffb #000000;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #14fffb;
+    border-radius: 5px;
+    border: 2px none #ff0000;
+  }
 
 body {
     background-image: url('img/John-wick.png');
@@ -51,6 +72,7 @@ body {
     /* max-height: 56.25vw; /* Set max height to maintain 16:9 aspect ratio (16 / 9 * 100) 
     max-width: 177.78vh; /* Set max width to maintain 16:9 aspect ratio (9 / 16 * 100) */ 
     background-attachment: fixed;
+    overflow-x: hidden;
   }
 
 .catFather{
