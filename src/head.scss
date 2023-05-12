@@ -117,8 +117,36 @@ body {
     font-size: 20px;
     cursor: pointer;
 }
-
-
+.search{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #fff, $alpha: 0.6);
+  
+  
+}
+.qwe2{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #fff, $alpha: 0.6);
+  display: none;
+  
+}
+.back4{
+  position: fixed;
+  color: black;
+  @include font1();
+  top: 20px;
+  right: 40px;
+  direction: rtl;
+  font-size: 23px;
+  cursor: pointer;
+}
+.profcons{
+  width: 100%;
+  
+}
 
   
   

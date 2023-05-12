@@ -3,30 +3,39 @@ import './head.scss';
 import './middle.scss';
 import Category from './category';
 
+let choise = 0;
 
 const App = () => {
-  const [showCategory, setShowCategory] = useState(false);
+  const [etefaghat, setEtefaghat] = useState(choose2());
 
   const handleClickCategory = () => {
-    setShowCategory(true);
+    choise = 1;
+    setEtefaghat(choose2());
   };
 
   const handleGoBack = () => {
-    setShowCategory(false);
+    choise = 0;
+    setEtefaghat(choose2());
   };
 
+  function choose2() {
+    if (choise === 0) {
+      return 'header-middle';
+    } else if (choise === 1) {
+      return 'category';
+    }
+  }
+
   return (
-    <>
-      {!showCategory && (
+    <div className={etefaghat}>
+      {choise === 0 && (
         <>
           <Header handleClickCategory={handleClickCategory} />
           <Middle />
         </>
       )}
-      {showCategory && (
-        <Category goBack={handleGoBack} />
-      )}
-    </>
+      {choise === 1 && <Category goBack={handleGoBack} />}
+    </div>
   );
 };
 
@@ -35,7 +44,7 @@ const Header = ({ handleClickCategory }) => {
     <header className="head">
       <div className="hello">
         <div className="left-secctions">
-          <div>جستجو</div>
+          <div id="srch">جستجو</div>
           <div>پروفایل</div>
         </div>
         <div className="right-secctions">
