@@ -1,5 +1,72 @@
-.middle{
+.middle {
     width: 90vw;
     margin-left: 5vw;
     margin-right: 5vw;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: right;
+    direction: rtl;
+}
+$imdb : #E2B616;
+$year : #43CAF4;
+.movie-card {
+    width: 20%;
+    height: 310px;
+    margin: 2.5%;
+    background-color: red;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+
+    &-top {
+        width: 96%;
+        height: 68%;
+        padding: 4%;
+        float: left;
+        .raiting{
+            background-color: $imdb;
+            border-radius: 5px;
+            padding: 1% 2%;
+            margin-right: 3%;
+            text-align: center;
+            float: right;
+        }
+        .year{
+            background-color: $year;
+            border-radius: 5px;
+            padding: 1% 2%;
+            text-align: center;
+            float: left;
+        }
+        .genras{
+            float: left;
+            background-color: white;
+            border-radius: 5px;
+            padding: 1% 2%;
+            text-align: center;
+            margin-top: 5%;
+        }
+    }
+
+    &-bottom {
+        width: 96%;
+        height: 28%;
+        direction: ltr;
+        padding: 4%;
+        float: left;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+
+        &-text {
+            background-color: rgba($color: #fff, $alpha: 0.7);
+            padding: 1%;
+            border-radius: 5px;
+        }
+
+
+    }
 }

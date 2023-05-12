@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import './head.scss';
 import './middle.scss';
 import Category from './category';
+import axios from "axios";
 
 let choise = 0;
-
+let res = [];
 const App = () => {
   const [etefaghat, setEtefaghat] = useState(choose2());
 
@@ -60,9 +61,46 @@ const Header = ({ handleClickCategory }) => {
 };
 
 const Middle = () => {
+  const [data, setData] = useState(res);
+  React.useEffect(
+    () => {
+      if (data.length === 0) {
+        axios.get('http://localhost:7421/api.php')
+          .then(function (response) {
+            // handle success
+            console.log(response);
+            res = response.data;
+            setData(res);
+          })
+          .catch(function (error) {
+            // handle error
+            console.log(error);
+          });
+      }
+    }, [data]
+  );
+
+  console.log(data);
+
   return (
     <div className="middle">
-      my middle sections
+      <>
+        {data.map((movie) =>
+        (
+          <div key={movie[0]} className="movie-card" style={{ backgroundImage: `url(${movie[3]})` }}>
+            <div className="movie-card-top">
+              <div style={{width : "100%" , float: "left"}}>
+                <div className="raiting">{movie[2]}</div>
+                <div className="year">{movie[5]}</div>
+              </div>
+              <div style={{width : "100%" , float: "left"}}>
+                <div className="genras">{movie[4]}</div>
+              </div>
+            </div>
+            <div className="movie-card-bottom"><span className="movie-card-bottom-text">{movie[1]}</span></div>
+          </div>
+        ))}
+      </>
     </div>
   );
 };
