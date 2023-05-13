@@ -10,7 +10,7 @@ function ShowMovie() {
     console.log(id);
     useEffect(() => {
         if (data.length === 0) {
-            axios.get('http://localhost:7421/api.php')
+            axios.get('/api.php')
                 .then(function (response) {
                     // handle success
                     console.log(response);
