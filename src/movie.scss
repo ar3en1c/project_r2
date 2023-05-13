@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Braah+One&display=swap');
+
+
+@mixin font1 {
+    font-family: 'Braah One', sans-serif;
+}
+
+.mov-name {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 30px;
+
+    div {
+        color: #fff;
+        @include font1();
+    }
+}
+.mov-mov{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    .movieplayer{
+        width: 70%;
+        video{
+            width: 100%;
+        }
+    }
+}
