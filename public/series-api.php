@@ -1,7 +1,7 @@
 <?php
 $db = new PDO('sqlite:' . __DIR__ . '/mov.db');
 
-$qgetdata = $db->query("SELECT * FROM MOVIE");
+$qgetdata = $db->query("SELECT * FROM SERIES");
 $getdata = $qgetdata->fetchAll(PDO::FETCH_ASSOC);
 $option = [];
 foreach ($getdata as $value) {
@@ -9,6 +9,6 @@ foreach ($getdata as $value) {
 }
 echo json_encode($option);
 
-$db= null;
+$db = null;
 header('Access-Control-Allow-Origin: http://localhost:3000');
 ?>

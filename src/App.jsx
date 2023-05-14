@@ -5,6 +5,8 @@ import Category from './category';
 import axios from "axios";
 import { Route, Routes , Link , NavLink} from "react-router-dom";
 import ShowMovie from "./ShowMovie";
+import Series from "./Series";
+import Showseries from "./Showseries";
 
 let choise = 0;
 let res = [];
@@ -36,11 +38,20 @@ const App = () => {
           <Header handleClickCategory={handleClickCategory} />
           <Routes>
             <Route element={<Middle />} path="/" />
+            <Route element={<Middle />} path="/films" />
             <Route element={<ShowMovie />} path="/movie/:id" />
+            <Route element={<Series />} path="/series" / >
+            <Route element={<Showseries />} path="/series/:id" />
           </Routes>
         </>
       )}
-      {choise === 1 && <Category goBack={handleGoBack} />}
+      {choise === 1 && (
+        <>
+          <Routes>
+            <Route element={<Category goBack={handleGoBack} />} path="*" />
+          </Routes>
+        </>
+      )}
     </div>
   );
 };
@@ -56,8 +67,8 @@ const Header = ({ handleClickCategory }) => {
         <div className="right-secctions">
           <div style={{ fontSize: '25px', fontFamily: 'arial', paddingTop: '15px' }}>لوگو</div>
           <NavLink to={'/'} className="Link"><div>خانه</div></NavLink>
-          <div>فیلم ها</div>
-          <div>سریال ها</div>
+          <NavLink to={'/films'} className="Link"><div>فیلم ها</div></NavLink>
+          <NavLink to={'/series'} className="Link"><div>سریال ها</div></NavLink>
           <div id="category" onClick={handleClickCategory}>دسته بندی</div>
         </div>
       </div>
@@ -71,6 +82,7 @@ const Middle = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
+        /* const response = await axios.get('http://localhost:7421/api.php'); */
         const response = await axios.get('/api.php');
         console.log(response);
         setData(response.data);
