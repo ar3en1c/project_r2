@@ -85,8 +85,8 @@ const Middle = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:7421/all-api.php');
-        /* const response = await axios.get('/api.php'); */
+        /* const response = await axios.get('http://localhost:7421/all-api.php'); */
+        const response = await axios.get('/all-api.php');
         console.log(response);
         setData(response.data);
       } catch (error) {

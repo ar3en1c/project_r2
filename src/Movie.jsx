@@ -9,8 +9,8 @@ function Movie() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:7421/api.php');
-                /* const response = await axios.get('/series-api.php'); */
+                /* const response = await axios.get('http://localhost:7421/movie-api.php'); */
+                const response = await axios.get('/movie-api.php');
                 console.log(response);
                 setData(response.data);
             } catch (error) {
