@@ -9,8 +9,8 @@ function Showseries() {
     console.log(id);
     useEffect(() => {
         if (data.length === 0) {
-            /* axios.get('http://localhost:7421/series-api.php') */
-            axios.get('/series-api.php')
+            axios.get('http://localhost:7421/series-api.php')
+            /* axios.get('/series-api.php') */
                 .then(function (response) {
                     // handle success
                     console.log(response);

@@ -3,13 +3,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import './middle.scss';
 
-function Series() {
+function Movie() {
     const [data, setData] = useState([]);
     /* dar await neveshte shode chon ke behemon error promise barmigardond va ba in kar sabr mikonim ta etelata daryaft beshavad */
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:7421/series-api.php');
+                const response = await axios.get('http://localhost:7421/api.php');
                 /* const response = await axios.get('/series-api.php'); */
                 console.log(response);
                 setData(response.data);
@@ -30,7 +30,7 @@ function Series() {
             <>
                 {data.map((movie) =>
                 (
-                    <Link className="link-width" key={movie[0]} to={`/series/${movie[0]}`}>
+                    <Link className="link-width" key={movie[0]} to={`/movie/${movie[0]}`}>
                         <div className="movie-card" style={{ backgroundImage: `url(${movie[3]})` }}>
                             <div className="movie-card-top">
                                 <div style={{ width: "100%", float: "left" }}>
@@ -50,4 +50,4 @@ function Series() {
     );
 }
 
-export default Series;
+export default Movie;
