@@ -85,7 +85,7 @@ const Middle = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:7421/home-api.php');
+        const response = await axios.get('http://localhost:7421/all-api.php');
         /* const response = await axios.get('/api.php'); */
         console.log(response);
         setData(response.data);
@@ -106,7 +106,7 @@ const Middle = () => {
       <>
         {data.map((movie) =>
         (
-          <Link className="link-width" key={movie[8]} to={`/all/${movie[8]}`}>
+          <Link className="link-width" key={movie[0]} to={`/all/${movie[0]}`}>
             <div className="movie-card" style={{ backgroundImage: `url(${movie[3]})` }}>
               <div className="movie-card-top">
                 <div style={{ width: "100%", float: "left" }}>

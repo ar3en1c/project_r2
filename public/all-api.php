@@ -1,8 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: http://localhost:3000');
 header('Access-Control-Allow-Methods: GET');
-header('Access-Control-Allow-Headers: Content-Type');
-header('Content-Type: application/json');
+
 $db = new PDO('sqlite:' . __DIR__ . '/mov.db');
 
 $qgetdata = $db->query("SELECT media.id as 'id' , name , raiting , cover , genras , year , summery , link , movie.id as 'item_id' FROM media INNER JOIN movie ON media.key = movie.id and media.type like 'Movie' union SELECT media.id as 'id' , name , raiting , cover , genras , year
