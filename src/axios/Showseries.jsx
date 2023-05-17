@@ -1,16 +1,16 @@
 import { useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import './movie.scss';
+import './../movie.scss';
 
-function All() {
+function Showseries() {
     let { id } = useParams();
     const [data, setData] = useState([]);
     console.log(id);
     useEffect(() => {
         if (data.length === 0) {
-            /* axios.get('http://localhost:7421/all-api.php') */
-            axios.get('/all-api.php')
+            axios.get('http://localhost:7421/series-api.php')
+            /* axios.get('/series-api.php') */
                 .then(function (response) {
                     // handle success
                     console.log(response);
@@ -39,4 +39,4 @@ function All() {
     );
 }
 
-export default All;
+export default Showseries;

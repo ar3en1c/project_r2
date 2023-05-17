@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './App';
+import App from './axios/App';
 import Footer from './footer';
 import { BrowserRouter } from 'react-router-dom';
 

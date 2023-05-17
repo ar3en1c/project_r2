@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import './head.scss';
-import './middle.scss';
-import Category from './category';
+import './../head.scss';
+import './../middle.scss';
+import Category from './../category';
 import axios from "axios";
 import { Route, Routes , Link , NavLink} from "react-router-dom";
 import ShowMovie from "./ShowMovie";
@@ -9,6 +9,7 @@ import Series from "./Series";
 import Showseries from "./Showseries";
 import Movie from "./Movie";
 import All from "./All";
+import Search from "./Search";
 
 let choise = 0;
 let res = [];
@@ -45,6 +46,7 @@ const App = () => {
             <Route element={<Series />} path="/series" / >
             <Route element={<Showseries />} path="/series/:id" />
             <Route element={<All />} path="/all/:id" />
+            <Route element={<Search />} path="/genras/:gn" />
           </Routes>
         </>
       )}
@@ -85,8 +87,8 @@ const Middle = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        /* const response = await axios.get('http://localhost:7421/all-api.php'); */
-        const response = await axios.get('/all-api.php');
+        const response = await axios.get('http://localhost:7421/all-api.php');
+        /* const response = await axios.get('/all-api.php'); */
         console.log(response);
         setData(response.data);
       } catch (error) {

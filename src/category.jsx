@@ -1,5 +1,6 @@
 import React from "react";
 import './head.scss';
+import { Link } from "react-router-dom";
 
 const Category = ({ goBack }) => {
     return (
@@ -7,28 +8,44 @@ const Category = ({ goBack }) => {
             <div className="catFather">
                 <div className="catUncle">
                     <div className="catChild">
-                        اکشن
+                        <Link className="Link" to={"/genras/action"} onClick={goBack}>
+                            اکشن
+                        </Link>
                     </div>
                     <div className="catChild">
-                        جنایی
+                        <Link className="Link" to={"/genras/crime"} onClick={goBack}>
+                            جنایی
+                        </Link>
                     </div>
                     <div className="catChild">
-                        درام
+                        <Link className="Link" to={"/genras/drama"} onClick={goBack}>
+                            درام
+                        </Link>
                     </div>
                     <div className="catChild">
-                        عاشقانه
+                        <Link className="Link" to={"/genras/anime"} onClick={goBack}>
+                            انیمه
+                        </Link>
                     </div>
                     <div className="catChild">
-                        کمدی
+                        <Link className="Link" to={"/genras/comedy"} onClick={goBack}>
+                            کمدی
+                        </Link>
                     </div>
                     <div className="catChild">
-                        ترسناک
+                        <Link className="Link" to={"/genras/sci-fi"} onClick={goBack}>
+                            علمی تخیلی
+                        </Link>
                     </div>
                     <div className="catChild">
-                        خانوادگی
+                        <Link className="Link" to={"/genras/sports"} onClick={goBack}>
+                            ورزشی
+                        </Link>
                     </div>
                     <div className="catChild">
-                        ماجراجویی
+                        <Link className="Link" to={"/genras/advanture"} onClick={goBack}>
+                            ماجراجویی
+                        </Link>
                     </div>
                 </div>
                 <button onClick={goBack} className="goback">بازگشت</button>

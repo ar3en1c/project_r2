@@ -155,4 +155,13 @@ body {
 .active{
   color: darkorange !important;
 }
+
+.Link{
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  &:visited{
+    color: white;
+  }
+}
   
