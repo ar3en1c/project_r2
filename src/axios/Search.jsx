@@ -1,4 +1,4 @@
-import { useParams , Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -6,18 +6,24 @@ function Search() {
     let { gn } = useParams();
     const [data, setData] = useState([]);
     useEffect(() => {
-        axios.post('http://localhost:7421/cat-api.php', {
-            Category: gn
-        })
-            .then((Response) => {
-                setData(Response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    })
+        const fetchData = async () => {
+            try {
+              /* const response = await axios.get('http://localhost:7421/cat-api.php'); */
+              const response = await axios.post('/cat-api.php' , {
+                Category : gn
+              });
+              console.log(response);
+              setData(response.data);
+            } catch (error) {
+              console.log(error);
+            }
+          };
+          if (data.length === 0) {
+            fetchData();
+          }
+    }, [data, setData , gn])
 
-
+    console.log(data);
     return (
         <div className="middle">
             <>
