@@ -17,14 +17,87 @@
         @include font1();
     }
 }
-.mov-mov{
+
+.mov-mov {
     width: 100%;
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    .movieplayer{
+
+    .movieplayer {
         width: 70%;
-        video{
+
+        video {
+            width: 100%;
+        }
+    }
+}
+
+
+.description {
+    width: 80%;
+    margin: 70px 10%;
+
+    .cover {
+        float: left;
+        width: 20%;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+
+    .texting {
+        float: left;
+        width: 80%;
+        .name {
+            @include font1();
+            font-size: 40px;
+            color: #fff;
+            margin-left: 5vw;
+            margin-top: 20px;
+            width: 100%;
+            float: left;
+        }
+
+        
+        .summery{
+            @include font1();
+            font-size: 20px;
+            color: white;
+            margin-left: 5vw;
+            margin-top: 12px;
+            float: left;
+            width: 100%;
+        }
+        
+        .num{
+            margin-left: 5vw;
+            margin-top: 10px;
+            width: 100%;
+            float: left;
+            .year{
+                color: darkslategrey;
+                @include font1();
+                font-size: 25px;
+                margin-left: 3vw;
+                float: left;
+            }
+            .raiting {
+                @include font1();
+                color: darkgoldenrod;
+                font-size: 25px;
+                float: left;
+                
+            }
+        }
+        .genras{
+            @include font1();
+            font-size: 22px;
+            color: white;
+            margin-left: 5vw;
+            margin-top: 15px;
+            float: left;
             width: 100%;
         }
     }

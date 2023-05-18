@@ -9,8 +9,8 @@ function ShowMovie() {
     console.log(id);
     useEffect(() => {
         if (data.length === 0) {
-            /* axios.get('http://localhost:7421/movie-api.php') */
-            axios.get('/movie-api.php')
+            axios.get('http://localhost:7421/movie-api.php')
+            /* axios.get('/movie-api.php') */
                 .then(function (response) {
                     // handle success
                     console.log(response);
@@ -33,6 +33,20 @@ function ShowMovie() {
             <div className="mov-mov">
                 <div id="movieplayer" className="movieplayer">
                     <video src={data[7]} controls></video>
+                </div>
+            </div>
+            <div className="description">
+                <div className="cover">
+                    <img src={data[3]} alt={data[1]} />
+                </div>
+                <div className="texting">
+                    <div className="name">{data[1]}</div>
+                    <div className="num">
+                        <div className="raiting">{data[2]}</div>
+                        <div className="year">{data[5]}</div>
+                    </div>
+                    <div className="genras">{data[4]}</div>
+                    <div className="summery">{data[6]}</div>
                 </div>
             </div>
         </>
