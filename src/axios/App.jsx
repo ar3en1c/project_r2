@@ -10,6 +10,7 @@ import Showseries from "./Showseries";
 import Movie from "./Movie";
 import All from "./All";
 import Search from "./Search";
+import Search1 from "./Search1";
 
 let choise = 0;
 let res = [];
@@ -47,6 +48,7 @@ const App = () => {
             <Route element={<Showseries />} path="/series/:id" />
             <Route element={<All />} path="/all/:id" />
             <Route element={<Search />} path="/genras/:gn" />
+            <Route element={<Search1 />} path="/search" />
           </Routes>
         </>
       )}
@@ -65,10 +67,10 @@ const Header = ({ handleClickCategory }) => {
   return (
     <header className="head">
       <div className="hello">
-        {/* <div className="left-secctions">
-          <div id="srch">جستجو</div>
-          <div>پروفایل</div>
-        </div> */}
+        <div className="left-secctions">
+          <NavLink to={'/search'}>جستجو</NavLink>
+          {/* <div>پروفایل</div> */}
+        </div>
         <div className="right-secctions">
           <div className="logo">لوگو</div>
           <NavLink to={'/'} className="Link"><div>خانه</div></NavLink>

@@ -21,13 +21,15 @@
     float: left;
     width: 35%;
 
-    div {
+    a {
       float: left;
       font-size: 18px;
       @include font1();
       padding-left: 10px;
       padding-right: 25px;
       cursor: pointer;
+      color: white;
+      text-decoration: none;
 
     }
   }

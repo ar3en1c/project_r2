@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Braah+One&display=swap');
+
+
+@mixin font1 {
+    font-family: 'Braah One', sans-serif;
+}
+.div-main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .input{
+        width: 40%;
+        @media screen and (max-width: 700px) {
+            width: 80%;
+        }
+        input{
+            width: 100%;
+            background-color: transparent;
+            padding: 3% 5%;
+            color: white;
+            border-radius: 20px;
+            border: 2px solid darkgoldenrod;
+            font-size: 20px;
+            @include font1();
+            &:focus{
+                border: 2px solid white;
+                outline: none;
+            }
+            @media screen and (max-width: 700px) {
+                width: 80%;
+            }
+        }
+    }
+}
