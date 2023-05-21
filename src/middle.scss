@@ -7,6 +7,9 @@
     flex-wrap: wrap;
     justify-content: right;
     direction: rtl;
+    @media screen and (max-width: 365px) {
+        justify-content: center;
+    }
 }
 $imdb : #E2B616;
 $year : #43CAF4;
@@ -20,6 +23,7 @@ $year : #43CAF4;
     border-radius: 10px;
     cursor: pointer;
     float: right;
+    background-position: center;
 
     &-top {
         width: 96%;
@@ -75,4 +79,13 @@ $year : #43CAF4;
     width: 20%;
     height: 310px;
     margin: 2.5%;
+    @media screen and (max-width: 1100px) {
+        width: 28%;
+    }
+    @media screen and (max-width: 670px) {
+        width: 45%;
+    }
+    @media screen and (max-width: 365px) {
+        width: 70%;
+    }
 }

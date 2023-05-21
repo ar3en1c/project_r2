@@ -11,10 +11,14 @@
     justify-content: center;
     font-size: 40px;
     margin-top: 30px;
+    
 
     div {
         color: #fff;
         @include font1();
+        @media screen and (max-width: 365px) {
+            margin-top: 40px;
+        }
     }
 }
 
@@ -26,6 +30,9 @@
 
     .movieplayer {
         width: 70%;
+        @media screen and (max-width: 450px) {
+            width: 90%;
+        }
 
         video {
             width: 100%;
@@ -41,9 +48,13 @@
     .cover {
         float: left;
         width: 20%;
+        @media screen and (max-width: 450px) {
+            width: 50%;
+        }
 
         img {
             border-radius: 10px;
+            max-width: 100%;
         }
     }
 
@@ -58,6 +69,9 @@
             margin-top: 20px;
             width: 100%;
             float: left;
+            @media screen and (max-width: 850px) {
+                font-size: 30px;
+            }
         }
 
         
@@ -69,6 +83,9 @@
             margin-top: 12px;
             float: left;
             width: 100%;
+            @media screen and (max-width: 850px) {
+                font-size: 15px;
+            }
         }
         
         .num{
@@ -82,12 +99,18 @@
                 font-size: 25px;
                 margin-left: 3vw;
                 float: left;
+                @media screen and (max-width: 850px) {
+                    font-size: 20px;
+                }
             }
             .raiting {
                 @include font1();
                 color: darkgoldenrod;
                 font-size: 25px;
                 float: left;
+                @media screen and (max-width: 850px) {
+                    font-size: 20px;
+                }
                 
             }
         }
@@ -99,6 +122,9 @@
             margin-top: 15px;
             float: left;
             width: 100%;
+            @media screen and (max-width: 850px) {
+                font-size: 17px;
+            }
         }
     }
 }

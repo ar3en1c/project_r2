@@ -1,139 +1,202 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
 
 
-@mixin font1{
-    font-family: 'Noto Nastaliq Urdu', serif;
+@mixin font1 {
+  font-family: 'Noto Nastaliq Urdu', serif;
 }
-.head{
-    
-    width: 100vw;
-    height: 60px;
-}
-.hello{
-    width: 90%;
-    padding-left: 5%;
-    padding-right: 5%;
-    color: white;
-    .left-secctions{
-        float: left;
-        width: 35%;
-        div{
-            float: left;
-            font-size: 18px;
-            @include font1();
-            padding-left: 10px;
-            padding-right: 25px;
-            cursor: pointer;
 
-        }
-    }
-    .right-secctions{
-        float: left;
-        width: 65%;
-        div{
-            float: right;
-            font-size: 18px;
-            @include font1();
-            padding-right: 10px;
-            padding-left: 25px;
-            cursor: pointer;
-        }
-    }
+.head {
+
+  width: 100vw;
+  height: 60px;
 }
+
+.hello {
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: white;
+
+  .left-secctions {
+    float: left;
+    width: 35%;
+
+    div {
+      float: left;
+      font-size: 18px;
+      @include font1();
+      padding-left: 10px;
+      padding-right: 25px;
+      cursor: pointer;
+
+    }
+  }
+
+  .right-secctions {
+    float: right;
+    width: 65%;
+    @media screen and (max-width: 550px) {
+      width: 90%;
+    }
+    @media screen and (max-width: 420px) {
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-family: arial;
+      padding-top: 15px;
+
+      @media screen and (max-width: 670px) {
+        font-size: 17px;
+      }
+      @media screen and (max-width: 670px) {
+        font-size: 26px;
+      }
+    }
+
+    div {
+      float: right;
+      font-size: 18px;
+      @include font1();
+      padding-right: 10px;
+      padding-left: 25px;
+      cursor: pointer;
+
+      @media screen and (max-width: 670px) {
+        font-size: 14px;
+      }
+      @media screen and (max-width: 365px) {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #14fffb #000000;
-  }
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #14fffb #000000;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 5px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #000000;
-  }
+*::-webkit-scrollbar-track {
+  background: #000000;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #14fffb;
-    border-radius: 5px;
-    border: 2px none #ff0000;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #14fffb;
+  border-radius: 5px;
+  border: 2px none #ff0000;
+}
 
 body {
-    background-image: url('img/John-wick.png');
-    background-size: cover;
-    background-position: center center;
-    height: 100vh; /* Set height to full viewport height */
-    width: 100vw; /* Set width to full viewport width */
-    background-repeat: no-repeat;
-    /* max-height: 56.25vw; /* Set max height to maintain 16:9 aspect ratio (16 / 9 * 100) 
-    max-width: 177.78vh; /* Set max width to maintain 16:9 aspect ratio (9 / 16 * 100) */ 
-    background-attachment: fixed;
-    overflow-x: hidden;
+  background-image: url('img/John-wick.png');
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  /* Set height to full viewport height */
+  width: 100vw;
+  /* Set width to full viewport width */
+  background-repeat: no-repeat;
+  /* max-height: 56.25vw; /* Set max height to maintain 16:9 aspect ratio (16 / 9 * 100) 
+    max-width: 177.78vh; /* Set max width to maintain 16:9 aspect ratio (9 / 16 * 100) */
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.catFather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  @media screen and (max-width: 850px) {
+    height: auto;
   }
 
-.catFather{
+  flex-wrap: nowrap;
+
+  .catUncle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 70vw;
+    height: 90vh;
+    direction: rtl;
+    flex-wrap: wrap;
 
-    flex-wrap: nowrap;
-    .catUncle{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 70vw;
-        height: 90vh;
-        direction: rtl;
-        flex-wrap: wrap;
+    @media screen and (max-width: 850px) {
+      margin-top: 75px;
+      height: auto;
     }
-    .catChild{
-        font-size: 25px;
-        @include font1();
-        color: white;
-        width: 50%;
-        float: right;
-        text-align: center;
-        cursor: pointer;
-        user-select: none;
-    }
-}
+  }
 
-.goback{
-    position: absolute; /* Add this line */
-    top: 10px; /* Add this line */
-    right: 10px; /* Add this line */
-    padding: 10px;
-    background-color: transparent;
-    color: white;
-    border: none;
-    border-radius: 5px;
+  .catChild {
+    font-size: 25px;
     @include font1();
-    font-size: 20px;
+    color: white;
+    width: 50%;
+    float: right;
+    text-align: center;
     cursor: pointer;
+    user-select: none;
+
+    @media screen and (max-width: 850px) {
+      width: 25%;
+      margin-top: 50px;
+    }
+    @media screen and (max-width: 450px) {
+      width: 33%;
+    }
+    @media screen and (max-width: 350px) {
+      width: 50%;
+    }
+  }
 }
-.search{
+
+.goback {
+  position: absolute;
+  /* Add this line */
+  top: 10px;
+  /* Add this line */
+  right: 10px;
+  /* Add this line */
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  @include font1();
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.search {
   position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba($color: #fff, $alpha: 0.6);
-  
-  
+
+
 }
-.qwe2{
+
+.qwe2 {
   position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba($color: #fff, $alpha: 0.6);
   display: none;
-  
+
 }
-.back4{
+
+.back4 {
   position: fixed;
   color: black;
   @include font1();
@@ -143,25 +206,27 @@ body {
   font-size: 23px;
   cursor: pointer;
 }
-.profcons{
+
+.profcons {
   width: 100%;
-  
+
 }
 
-.Link{
+.Link {
   color: white;
   font-size: 18px;
 }
-.active{
+
+.active {
   color: darkgoldenrod !important;
 }
 
-.Link{
+.Link {
   color: white;
   font-size: 25px;
   text-decoration: none;
-  &:visited{
+
+  &:visited {
     color: white;
   }
 }
-  

@@ -65,12 +65,12 @@ const Header = ({ handleClickCategory }) => {
   return (
     <header className="head">
       <div className="hello">
-        <div className="left-secctions">
+        {/* <div className="left-secctions">
           <div id="srch">جستجو</div>
           <div>پروفایل</div>
-        </div>
+        </div> */}
         <div className="right-secctions">
-          <div style={{ fontSize: '25px', fontFamily: 'arial', paddingTop: '15px' }}>لوگو</div>
+          <div className="logo">لوگو</div>
           <NavLink to={'/'} className="Link"><div>خانه</div></NavLink>
           <NavLink to={'/films'} className="Link"><div>فیلم ها</div></NavLink>
           <NavLink to={'/series'} className="Link"><div>سریال ها</div></NavLink>
