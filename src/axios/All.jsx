@@ -9,8 +9,8 @@ function All() {
     console.log(id);
     useEffect(() => {
         if (data.length === 0) {
-            axios.get('http://localhost:7421/all-api.php')
-            /* axios.get('/all-api.php') */
+            /* axios.get('http://localhost:7421/all-api.php') */
+            axios.get('/all-api.php')
                 .then(function (response) {
                     // handle success
                     console.log(response);

@@ -8,12 +8,12 @@ function Search() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post('http://localhost:7421/cat-api.php' , {
+                /* const response = await axios.post('http://localhost:7421/cat-api.php' , {
                     Category : gn
-                  });
-              /* const response = await axios.post('/cat-api.php' , {
+                  }); */
+              const response = await axios.post('/cat-api.php' , {
                 Category : gn
-              }); */
+              });
               console.log(response);
               setData(response.data);
             } catch (error) {
