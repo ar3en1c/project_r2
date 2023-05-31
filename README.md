@@ -9,8 +9,6 @@ Avengers is a movie and series site built with React. It is a university project
 + See who is in the cast of each movie or series
 ## Technologies
 + React
-+ Redux
-+ TypeScript
 + JavaScript
 + PHP
 + SQLite
@@ -22,3 +20,5 @@ To get started with Avengers, you will need to have Node.js and SQLite installed
 ```npm start```
 
 This will start the development server on port 3000. You can then visit (http://localhost:3000) in your browser to view the site.
+## Visit Demo
+For Visit Demo Site [click here](https://project.ar3en1c.xyz)
