@@ -37,7 +37,7 @@ $border : #4f5159;
     float: right;
 
     &-child {
-        @include font1();
+        @include font3();
         float: right;
         padding: 15px 1.25%;
         width: 10%;
