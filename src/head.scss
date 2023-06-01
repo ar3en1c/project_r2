@@ -12,6 +12,9 @@
 
   width: 100vw;
   height: 60px;
+  @media (max-width: 650px) {
+    display: none;
+  }
 }
 
 .hello {
@@ -22,7 +25,7 @@
 
   .left-secctions {
     float: left;
-    width: 35%;
+    width: 20%;
 
     a {
       float: left;
@@ -34,13 +37,19 @@
       color: white;
       text-decoration: none;
       padding-top: 15px;
+      @media screen and (max-width: 670px) {
+        font-size: 14px;
+      }
+      @media screen and (max-width: 365px) {
+        font-size: 20px;
+      }
 
     }
   }
 
   .right-secctions {
     float: right;
-    width: 65%;
+    width: 80%;
     @media screen and (max-width: 550px) {
       width: 90%;
     }
@@ -235,5 +244,53 @@ body {
 
   &:visited {
     color: white;
+  }
+}
+
+.ham1{
+  display: none;
+
+  @media (max-width: 650px) {
+    width: 35%;
+    display: flex;
+    position: fixed;
+    background-color: rgba($color: #121212, $alpha: 0.9);
+    border-radius: 0px 10px 10px 0px;
+    color: white;
+    @include font1();
+    flex-wrap: nowrap;
+    flex-direction: column;
+    direction: rtl;
+    text-align: center;
+    a{
+      margin: 10px 0;
+      font-size: 20px;
+
+    }
+    div{
+      font-size: 20px;
+      cursor: pointer;
+      margin: 15px 0;
+    }
+  }
+}
+.menu1{
+  display: none;
+  @media (max-width: 650px) {
+    display: block;
+    position: fixed;
+    color: white;
+    direction: rtl;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    background-color: rgba($color: darkgoldenrod, $alpha: 0.5);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 4px;
+    @include font1();
+    cursor: pointer;
+    user-select: none;
+        
   }
 }

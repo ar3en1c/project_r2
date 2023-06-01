@@ -3,7 +3,7 @@ import './../head.scss';
 import './../middle.scss';
 import Category from './../category';
 import axios from "axios";
-import { Route, Routes , Link , NavLink} from "react-router-dom";
+import { Route, Routes, Link, NavLink } from "react-router-dom";
 import ShowMovie from "./ShowMovie";
 import Series from "./Series";
 import Showseries from "./Showseries";
@@ -14,6 +14,8 @@ import Search1 from "./Search1";
 
 let choise = 0;
 let res = [];
+
+
 const App = () => {
   const [etefaghat, setEtefaghat] = useState(choose2());
 
@@ -40,11 +42,12 @@ const App = () => {
       {choise === 0 && (
         <>
           <Header handleClickCategory={handleClickCategory} />
+          <Menu handleClickCategory={handleClickCategory}/>
           <Routes>
             <Route element={<Middle />} path="/" />
             <Route element={<Movie />} path="/films" />
             <Route element={<ShowMovie />} path="/movie/:id" />
-            <Route element={<Series />} path="/series" / >
+            <Route element={<Series />} path="/series" />
             <Route element={<Showseries />} path="/series/:id" />
             <Route element={<All />} path="/all/:id" />
             <Route element={<Search />} path="/genras/:gn" />
@@ -83,6 +86,34 @@ const Header = ({ handleClickCategory }) => {
   );
 };
 
+const Hambrguer = ({ ope , setope , handleClickCategory}) => {
+  console.log(ope);
+  return (
+    <>
+      <div className="ham1" style={ope ? { display: "flex" } : { display: "none" }}>
+        <NavLink to={'/'} className="Link" onClick={() => {setope(false) ; window.scrollTo(0,0);}}><div>خانه</div></NavLink>
+        <NavLink to={'/films'} className="Link" onClick={() => {setope(false) ; window.scrollTo(0,0);}}><div>فیلم ها</div></NavLink>
+        <NavLink to={'/series'} className="Link" onClick={() => {setope(false) ; window.scrollTo(0,0);}}><div>سریال ها</div></NavLink>
+        <div id="category" onClick={() => {setope(false) ; window.scrollTo(0,0); handleClickCategory();}}>دسته بندی</div>
+        <NavLink to={'/search'} className="Link" onClick={() => {setope(false) ; window.scrollTo(0,200);}}>جستجو</NavLink>
+      </div>
+    </>
+  )
+}
+const Menu = ({handleClickCategory}) => {
+  const [ope, setOpe] = useState(false);
+  return (
+    <>
+      <div className="menu1" style={!ope ? { backgroundColor: "rgba(184, 134, 11, 0.6)", color: "white" } : { backgroundColor: "rgba(255, 255, 255, 0.8)", color: "rgba(184, 134, 11, 1)" }} onClick={() => setOpe(!ope)}>
+        <div>
+          {!ope ? "بازکردن منو" : "بستن منو"}
+        </div>
+      </div>
+      <Hambrguer ope={ope} setope={setOpe} handleClickCategory={handleClickCategory}/>
+    </>
+  )
+}
+
 const Middle = () => {
   const [data, setData] = useState(res);
   /* dar await neveshte shode chon ke behemon error promise barmigardond va ba in kar sabr mikonim ta etelata daryaft beshavad */
@@ -101,9 +132,10 @@ const Middle = () => {
       fetchData();
     }
   }, [data, setData]);
-  
+
 
   console.log(data);
+
 
   return (
     <div className="middle">

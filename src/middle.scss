@@ -15,7 +15,7 @@ $imdb : #E2B616;
 $year : #43CAF4;
 .movie-card {
     width: 100%;
-    height: 310px;
+    height: 450px;
 
     background-color: red;
     background-repeat: no-repeat;
@@ -24,6 +24,13 @@ $year : #43CAF4;
     cursor: pointer;
     float: right;
     background-position: center;
+    @media screen and (max-width: 2000px) {
+        height: 400px;
+    }
+    @media screen and (max-width: 1300px) {
+        height: 310px;
+    }
+    
 
     &-top {
         width: 96%;
@@ -77,8 +84,14 @@ $year : #43CAF4;
 
 .link-width{
     width: 20%;
-    height: 310px;
+    height: 450px;
     margin: 2.5%;
+    @media screen and (max-width: 2000px) {
+        height: 400px;
+    }
+    @media screen and (max-width: 1300px) {
+        height: 310px;
+    }
     @media screen and (max-width: 1100px) {
         width: 28%;
     }

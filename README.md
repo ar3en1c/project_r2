@@ -9,6 +9,7 @@ Avengers is a movie and series site built with React. It is a university project
 + See who is in the cast of each movie or series
 ## Technologies
 + React
++ Redux
 + JavaScript
 + PHP
 + SQLite
