@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: http://localhost:3000');
 $db = new PDO('sqlite:' . __DIR__ . '/mov.db');
 
 $qgetdata = $db->query("SELECT * FROM MOVIE");
@@ -10,5 +11,5 @@ foreach ($getdata as $value) {
 echo json_encode($option);
 
 $db= null;
-header('Access-Control-Allow-Origin: http://localhost:3000');
+
 ?>
