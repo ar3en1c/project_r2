@@ -9,8 +9,8 @@ function Series() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                /* const response = await axios.get('http://localhost:7421/series-api.php'); */
-                const response = await axios.get('/series-api.php');
+                const response = await axios.get('http://localhost:7421/series-api.php');
+                /* const response = await axios.get('/series-api.php'); */
                 console.log(response);
                 setData(response.data);
             } catch (error) {
