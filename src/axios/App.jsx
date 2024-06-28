@@ -11,6 +11,7 @@ import Movie from "./Movie";
 import All from "./All";
 import Search from "./Search";
 import Search1 from "./Search1";
+import { BASE_URL } from './base_url';
 
 let choise = 0;
 let res = [];
@@ -120,7 +121,7 @@ const Middle = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:7421/all-api.php');
+        const response = await axios.get(`${BASE_URL}/all-api.php`);
         /* const response = await axios.get('/all-api.php'); */
         console.log(response);
         setData(response.data);

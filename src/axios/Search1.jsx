@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './../search.scss';
+import { BASE_URL } from './base_url';
 function Search1() {
 
 
@@ -11,7 +12,7 @@ function Search1() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:7421/all-api.php');
+                const response = await axios.get(`${BASE_URL}/all-api.php`);
                 /* const response = await axios.get('/all-api.php'); */
                 console.log(response);
                 setData(response.data);

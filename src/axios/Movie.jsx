@@ -2,6 +2,7 @@ import { useState , useEffect} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import './../middle.scss';
+import { BASE_URL } from './base_url';
 
 function Movie() {
     const [data, setData] = useState([]);
@@ -9,7 +10,7 @@ function Movie() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:7421/movie-api.php');
+                const response = await axios.get(`${BASE_URL}/movie-api.php`);
                 /* const response = await axios.get('/movie-api.php'); */
                 console.log(response);
                 setData(response.data);

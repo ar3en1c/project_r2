@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { BASE_URL } from './base_url';
 
 function Search() {
     let { gn } = useParams();
@@ -8,7 +9,7 @@ function Search() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post('http://localhost:7421/cat-api.php' , {
+                const response = await axios.post(`${BASE_URL}/cat-api.php` , {
                     Category : gn
                   });
               /* const response = await axios.post('/cat-api.php' , {

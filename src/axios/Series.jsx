@@ -2,6 +2,7 @@ import { useState , useEffect} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import './../middle.scss';
+import { BASE_URL } from "./base_url";
 
 function Series() {
     const [data, setData] = useState([]);
@@ -9,7 +10,7 @@ function Series() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:7421/series-api.php');
+                const response = await axios.get(`${BASE_URL}/series-api.php`);
                 /* const response = await axios.get('/series-api.php'); */
                 console.log(response);
                 setData(response.data);

@@ -2,6 +2,7 @@ import { useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import './../movie.scss';
+import { BASE_URL } from './base_url';
 
 function All() {
     let { id } = useParams();
@@ -9,7 +10,7 @@ function All() {
     console.log(id);
     useEffect(() => {
         if (data.length === 0) {
-            axios.get('http://localhost:7421/all-api.php')
+            axios.get(`${BASE_URL}/all-api.php`)
             /* axios.get('/all-api.php') */
                 .then(function (response) {
                     // handle success

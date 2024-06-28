@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import './../movie.scss';
+import { BASE_URL } from "./base_url";
 
 function Showseries() {
     let { id } = useParams();
@@ -9,7 +10,7 @@ function Showseries() {
     console.log(id);
     useEffect(() => {
         if (data.length === 0) {
-            axios.get('http://localhost:7421/series-api.php')
+            axios.get(`${BASE_URL}/series-api.php`)
                 /* axios.get('/series-api.php') */
                 .then(function (response) {
                     // handle success
