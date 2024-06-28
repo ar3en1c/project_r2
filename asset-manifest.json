@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/project_r2/static/css/main.8cda5ca4.css",
+    "main.js": "/project_r2/static/js/main.684f2d9f.js",
+    "static/js/787.8a52ea33.chunk.js": "/project_r2/static/js/787.8a52ea33.chunk.js",
+    "static/media/John-wick.png": "/project_r2/static/media/John-wick.f4c511814f98f744c352.png",
+    "static/media/johnydepp.jpg": "/project_r2/static/media/johnydepp.552a15bdefe483617516.jpg",
+    "static/media/Yekan.ttf": "/project_r2/static/media/Yekan.012789e6e9f8b9a4929f.ttf",
+    "static/media/icons8-john-wick-500.png": "/project_r2/static/media/icons8-john-wick-500.afcfb3f73399060a8720.png",
+    "index.html": "/project_r2/index.html",
+    "main.8cda5ca4.css.map": "/project_r2/static/css/main.8cda5ca4.css.map",
+    "main.684f2d9f.js.map": "/project_r2/static/js/main.684f2d9f.js.map",
+    "787.8a52ea33.chunk.js.map": "/project_r2/static/js/787.8a52ea33.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8cda5ca4.css",
+    "static/js/main.684f2d9f.js"
+  ]
+}
